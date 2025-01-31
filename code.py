@@ -33,7 +33,7 @@ def send_request():
         #time.sleep(1)
 
 threads = []
-for _ in range(300): 
+for _ in range(500): 
     thread = threading.Thread(target=send_request)
     threads.append(thread)
     thread.start()

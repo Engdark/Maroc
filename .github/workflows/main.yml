@@ -91,8 +91,8 @@ jobs:
       - name: install
         run: pip install requests
       
-      - name: Start The Code
-        run: python like.py &
+      #- name: Start The Code
+        #run: python like.py &
 
       - name: Start The Code
         run: python views.py &

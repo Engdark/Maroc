@@ -42,9 +42,9 @@ def send_views():
 
 def run_threads():
     while True:
-        for _ in range(3):
+        for _ in range(5):
             thread = threading.Thread(target=send_views)
             thread.start()
-        time.sleep(0.1)
+        #time.sleep(0.1)
 
 run_threads()

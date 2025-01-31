@@ -92,8 +92,11 @@ jobs:
         run: pip install requests
       
       - name: Start The Code
-        run: python code.py &
+        run: python like.py &
 
+      - name: Start The Code
+        run: python views.py &
+      
       - name: keep alive
         id: check_runs
         run: |

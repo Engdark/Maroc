@@ -90,9 +90,6 @@ jobs:
 
       - name: install
         run: pip install requests
-
-      - name: Start The Code
-        run: python code2.py &
       
       - name: Start The Code
         run: python code.py &

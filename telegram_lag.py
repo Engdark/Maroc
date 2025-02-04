@@ -51,7 +51,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     commands = """
     🔹 أوامر البوت 🔹
     /lag <IP:PORT> - بدء الهجوم
-    /stop-attack - إيقاف جميع الهجمات
+    /stop_attack - إيقاف جميع الهجمات
     """
     await update.message.reply_text(commands)
 
@@ -60,7 +60,7 @@ def main() -> None:
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("lag", lag))
-    app.add_handler(CommandHandler("stop-attack", stop_attack))
+    app.add_handler(CommandHandler("stop_attack", stop_attack))
 
     app.run_polling()
 

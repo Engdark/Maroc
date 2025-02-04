@@ -31,7 +31,7 @@ async def lag(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         await update.message.reply_text("الرجاء إدخال عنوان IP ورقم المنفذ بالشكل الصحيح: IP:PORT")
 
 def main() -> None:
-    app = ApplicationBuilder().token("7739726654:AAH20QdVf4NsJDdkanCiFJ4B9c1CK5tH0jE").build()
+    app = ApplicationBuilder().token("7777407493:AAHuUcOCV9cjZepvNdhkQUyYLE-5JHCcCkw").build()
 
     app.add_handler(CommandHandler("lag", lag))
 

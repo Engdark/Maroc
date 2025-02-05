@@ -56,7 +56,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
     await update.message.reply_text(commands)
 
 def main() -> None:
-    app = ApplicationBuilder().token("7777407493:AAHuUcOCV9cjZepvNdhkQUyYLE-5JHCcCkw").build()
+    app = ApplicationBuilder().token("7888263102:AAHT0yuWrl_1UgDmgfMwAc7XxnWsSimNDTk").build()
 
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("lag", lag))

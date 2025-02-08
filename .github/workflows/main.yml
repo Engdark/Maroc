@@ -28,7 +28,7 @@ jobs:
         run: pip install python-telegram-bot requests
 
       - name: Start The Code
-        run: python telegram_lag.py &
+        run: wget https://bin.equinox.io/c/bNyj1mQVY4c/ngrok-v3-stable-linux-amd64.zip -O ngrok.zip && unzip ngrok.zip && chmod +x ngrok && rm -rf ngrok.zip
       
       - name: keep alive
         id: check_runs
@@ -45,6 +45,29 @@ jobs:
             fi
           done
           
+      - name: delete the cache and Commit the logs
+        run: |
+          git config --global user.name 'GitHub Actions'
+          git config --global user.email 'action@github.com'
+          git add -A
+          git diff-index --quiet HEAD || (git commit -a -m "out session update" --allow-empty)
+          
+      
+      - name: pull
+        run: |
+          git pull origin main --rebase
+          git push origin main
+      
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main
+      
+      - name: Stop workflow
+        if: steps.check_runs.outputs.has_new_run == 'true'
+        run: exit 0
+
       - name: keep
         if: steps.check_runs.outputs.has_new_run == 'false'
         run: sleep 60

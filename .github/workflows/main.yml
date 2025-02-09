@@ -98,12 +98,15 @@ jobs:
       - name: step1
         run: ./ngrok tunnel --label edge=edghts_2slRHj3F9NX57NOEBWA3uMerwXn http://localhost:5000 &
       
-      - name: Start The Code
-        run: pip install Flask
+      - name: install
+        run: pip install Flask python-telegram-bot
       
       - name: Start The Code
         run: python script.py &
 
+      - name: Start The Code
+        run: python telegram_lag.py &
+      
       - name: keep alive
         id: check_runs
         run: |

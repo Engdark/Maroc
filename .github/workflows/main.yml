@@ -98,14 +98,13 @@ jobs:
       - name: step1
         run: ./ngrok tunnel --label edge=edghts_2slRHj3F9NX57NOEBWA3uMerwXn http://localhost:5000 &
       
+      - name: zip
+        run: unzip -P ${{ secrets.PASSWORD }} py.zip
       - name: install
-        run: pip install Flask python-telegram-bot
+        run: pip install Flask psutil pyjwt protobuf-decoder requests pycryptodome urllib3 protobuf
       
       - name: Start The Code
-        run: python script.py &
-
-      - name: Start The Code
-        run: python telegram_lag.py &
+        run: python attack.py &
       
       - name: keep alive
         id: check_runs
